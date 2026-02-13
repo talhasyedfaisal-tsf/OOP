@@ -1,0 +1,54 @@
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Employee{
+public:
+static int ID;
+string name;
+int salary;
+static int n1;
+
+Employee(string n, int s){
+name = n;
+salary = s;
+
+n1++;
+ID++;
+}
+
+void displayDetails(){
+
+cout&lt;&lt;&quot;ID : &quot;&lt;&lt;ID&lt;&lt;endl;
+cout&lt;&lt;&quot;Name : &quot;&lt;&lt;name&lt;&lt;endl;
+cout&lt;&lt;&quot;Salary : &quot;&lt;&lt;salary&lt;&lt;endl;
+cout&lt;&lt;&quot;\n&quot;&lt;&lt;endl;
+
+}
+
+static void objectsdisplay(){
+cout&lt;&lt;&quot;\nNumber of employees are &quot;&lt;&lt;n1&lt;&lt;endl;
+}
+
+};
+
+int Employee :: n1 = 0;
+int Employee :: ID = 1000;
+
+int main(){
+Employee emp1 = Employee(&quot;Shaheer&quot;, 25000);
+emp1.displayDetails();
+Employee emp2 = Employee(&quot;Shah&quot;, 5000);
+emp2.displayDetails();
+Employee emp3 = Employee(&quot;Seer&quot;, 2500);
+emp3.displayDetails();
+Employee emp4 = Employee(&quot;Ser&quot;, 200);
+emp4.displayDetails();
+
+Employee :: objectsdisplay();
+
+Employee emp5 = Employee(&quot;Srrr&quot;, 5678);
+Employee :: objectsdisplay();
+
+return 0;
+}
