@@ -1,0 +1,38 @@
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Satellite{
+private:
+string launchDate;
+string ID;
+int orbitRadius = 0;
+static int counter;
+public:
+Satellite(string ld, string id, int r) : launchDate(ld), ID(id), orbitRadius(r){}
+
+void calibrate(int r){
+orbitRadius = r;
+}
+
+void viewReport() const{
+
+cout&lt;&lt;&quot;Launch Date : &quot;&lt;&lt;launchDate&lt;&lt;endl;
+cout&lt;&lt;&quot;ID : &quot;&lt;&lt;ID&lt;&lt;endl;
+cout&lt;&lt;&quot;Orbit Radius(km) : &quot;&lt;&lt;orbitRadius&lt;&lt;endl;
+counter++;
+cout&lt;&lt;&quot;Count : &quot;&lt;&lt;counter&lt;&lt;&quot;\n\n&quot;&lt;&lt;endl;
+}
+
+};
+
+int Satellite :: counter = 0;
+
+int main(){
+Satellite S1(&quot;25/01/26&quot;, &quot;0001&quot;, 5000); //5000KM
+S1.viewReport();
+
+Satellite S2(&quot;7/09/28&quot;, &quot;0002&quot;, 17000);
+S2.viewReport();
+return 0;
+}
